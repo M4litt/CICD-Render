@@ -16,6 +16,8 @@
         <input type="submit" id="submit" value="Submit">
     </form>
 
+    <h2 id="result"></h2>
+
     <script>
         const form = document.querySelector('form')
         form.addEventListener('submit', (event) => {
@@ -24,7 +26,7 @@
             const data = Object.fromEntries(formData)
             
             //Alert the user that the form has been submitted
-            alert(`Hola! ${data.name} ${data.surname} ${Number(data.age) < 18 ? "sos menor de edad, volve con tu vieja" : "sos mayor de edad, podes continuar"}`)
+            document.getElementById("result").innerHTML = `Hola! ${data.name} ${data.surname} ${Number(data.age) < 18 ? "sos menor de edad, volve con tu vieja" : "sos mayor de edad, podes continuar"}`
         })
     </script>
 </body>
