@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HUB</title>
+</head>
+<body>
+    <h1 id="welcome">HOLA LETO!!111!1</h1>
+
+    <form method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="surname" placeholder="Surname">
+        <input type="text" name="age" placeholder="Age">
+        <input type="submit" id="submit" value="Submit">
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', (event) => {
+            event.preventDefault()
+            const formData = new FormData(form)
+            const data = Object.fromEntries(formData)
+            
+            //Alert the user that the form has been submitted
+            document.getElementById("result").innerHTML = `Hola! ${data.name} ${data.surname} ${Number(data.age) < 18 ? "sos menor de edad, volve con tu vieja" : "sos mayor de edad, podes continuar"}`
+        })
+    </script>
+</body>
+</html>
