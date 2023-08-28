@@ -20,7 +20,7 @@
         const formData = new FormData(form)
         const data = Object.fromEntries(formData)
         
-        fetch(`${window.location.protocol}//cicd-render-yn7q.onrender.com/user/auth`, {
+        fetch(`${window.location.protocol}//localhost:1461/user/auth`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -29,7 +29,7 @@
         })
         .then(res => {
             if (res.status === 200) {
-                window.location.href = `${window.location.protocol}//cicd-render-yn7q.onrender.com/hub`
+                window.location.href = `${window.location.protocol}//localhost:1461/hub`
             } else {
                 alert("Usuario o contraseña incorrectos")
             }
