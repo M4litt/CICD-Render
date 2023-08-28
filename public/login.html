@@ -22,7 +22,7 @@
         const formData = new FormData(form)
         const data = Object.fromEntries(formData)
         
-        fetch("http://127.0.0.1:1461/user/auth", {
+        fetch(`http://${window.location.host}/user/auth`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -31,7 +31,7 @@
         })
         .then(res => {
             if (res.status === 200) {
-                window.location.href = "http://127.0.0.1:1461/hub"
+                window.location.href = `http://${window.location.host}/hub`
             } else {
                 alert("Usuario o contraseña incorrectos")
             }
