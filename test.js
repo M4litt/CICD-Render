@@ -17,7 +17,7 @@ describe("App Tests", function () {
   });
   it("Login successful", async () => {
     //Go to url
-    await driver.get("http://localhost:1461/user");
+    await driver.get("http://cicd-render-yn7q.onrender.com/user");
     //Find element by id
     await driver.findElement(By.id("Username")).sendKeys("leto");
     //Find password by id
@@ -34,7 +34,7 @@ describe("App Tests", function () {
   });
 
   it("data submition", async () => {
-    await driver.get("http://localhost:1461/hub");
+    await driver.get("http://cicd-render-yn7q.onrender.com/hub");
     await driver.findElement(By.name("name")).sendKeys("thiago");
 
     await driver.findElement(By.name("surname")).sendKeys("leto");
